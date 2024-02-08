@@ -53,7 +53,7 @@ PetscErrorCode ablate::monitors::DmViewFromOptions::DMViewFromOptions(DM dm) {
         PetscCall(PetscObjectView((PetscObject)dm, viewer));
         PetscCall(PetscViewerFlush(viewer));
         PetscCall(PetscViewerPopFormat(viewer));
-        PetscCall(PetscOptionsRestoreViewer(&viewer));
+        PetscCall(PetscViewerDestroy(&viewer));
     }
 
     PetscFunctionReturn(0);
